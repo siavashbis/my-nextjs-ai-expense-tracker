@@ -9,7 +9,7 @@ interface RawInsight {
 }
 
 const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
+  baseURL: 'https://openrouter.ai/api/v1',
   apiKey: process.env.OPENROUTER_API_KEY || process.env.OPENAI_API_KEY,
   defaultHeaders: {
     'HTTP-Referer': process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
@@ -202,7 +202,7 @@ export async function generateAIAnswer(
     Return only the answer text, no additional formatting.`;
 
     const completion = await openai.chat.completions.create({
-      model: "deepseek/deepseek-chat-v3-0324",
+      model: 'deepseek/deepseek-chat-v3-0324:free',
       messages: [
         {
           role: 'system',
